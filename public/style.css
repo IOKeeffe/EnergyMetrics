@@ -1,0 +1,43 @@
+ul, li, body {
+  font-family: HelveticaNeue;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0; }
+
+.header {
+  display: flex;
+  justify-content: space-between; }
+  .header ul {
+    display: flex; }
+  .header .tab-list {
+    justify-content: flex-start; }
+    .header .tab-list li:last-child {
+      border-right: 1px solid #dddddd; }
+    .header .tab-list .header-tab {
+      border-left: 1px solid #dddddd;
+      color: #00a4c7;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 22px 16px;
+      transition: .2s; }
+    .header .tab-list .active-tab {
+      background-color: #dddddd;
+      border-top: 4px solid black;
+      color: black;
+      padding: 18px 16px 22px 16px; }
+    .header .tab-list .food-iq-logo {
+      height: 23.5px;
+      padding: 17px 66px 19.5px;
+      width: 134.8px; }
+      .header .tab-list .food-iq-logo img {
+        height: 23.5px;
+        width: 134.8px; }
+  .header .profile-info {
+    justify-content: flex-end; }
+
+/*# sourceMappingURL=style.css.map */

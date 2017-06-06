@@ -5,5 +5,5 @@ import Root from './root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');
-  ReactDOM.render(<Root>woh</Root>, rootEl);
+  ReactDOM.render(<Root></Root>, rootEl);
 });

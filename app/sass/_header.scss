@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    display: flex;
+  }
+  .tab-list {
+    justify-content: flex-start;
+    
+    li:last-child {
+      border-right: 1px solid #dddddd;
+    }
+    
+    .header-tab {
+      border-left: 1px solid #dddddd;
+      color: $light-blue;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 22px 16px;
+      transition: .2s;
+    }
+    
+    .active-tab {
+      background-color: $light-grey;
+      border-top: 4px solid black;
+      color: black;
+      padding: 18px 16px 22px 16px;
+    }
+    
+    .food-iq-logo {
+      height: 23.5px;
+      padding: 17px 66px 19.5px;
+      width: 134.8px;
+      
+      img {
+        height: 23.5px;
+        width: 134.8px;
+      }
+    }
+  }
+
+  .profile-info {
+    justify-content: flex-end;
+  }
+}
