@@ -23,7 +23,7 @@ export default class Header extends React.Component  {
         <ul className='profile-info'>
           <li className='support'>Help</li>
           <li className='support'>Contact</li>
-          <li className='user-name'>John Jones</li>
+          <li className='user-name'>John Jones<img src="./public/images/icon-namearrow.svg"></img></li>
         </ul>
       </div>
     );
