@@ -4,6 +4,8 @@ import TitleBar from './title_bar/title_bar';
 import Widget from './widget/widget';
 import AddWidget from './add_widget/add_widget';
 import Dashboard from './dashboard/dashboard';
+import {sample} from 'lodash/sample';
+import widgetData from '../../public/data/widget_data.js'
 
 export default class Root extends React.Component {
   constructor(props) {
@@ -11,19 +13,38 @@ export default class Root extends React.Component {
     this.state = {addPaneActive: true};
     this.title = "Dashboards";
     this.changePaneState = this.changePaneState.bind(this);
+    this.addWidget = this.addWidget.bind(this);
+    this.widgets = [
+      {
+        name:"Foods",
+        size: 1,
+        description: "yum",
+        data: sample(widgetData)
+      },
+      {
+        name:"Flavors",
+        size: 1,
+        description: "meh",
+        data: sample(widgetData)
+      }
+    ];
   }
 
   changePaneState(active) {
     this.setState({addPaneActive: active});
   }
 
+  addWidget({title, description, size, data}) {
+
+  }
+
   render() {
     return (
       <div className="content-holder">
-        <AddWidget active={this.state.addPaneActive} changePaneState={this.changePaneState}  />
+        <AddWidget active={this.state.addPaneActive} changePaneState={this.changePaneState} addWidget={this.addWidget} />
         <Header />
         <TitleBar title={this.title} />
-        <Dashboard />
+        <Dashboard widgets={this.widgets} />
       </div>
     );
   }

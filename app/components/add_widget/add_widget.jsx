@@ -1,5 +1,7 @@
 import React from 'react';
 import WidgetOption from './widget_option';
+import widgetData from '../../../public/data/widget_data.js'
+import {sample} from 'lodash';
 
 export default class AddWidget extends React.Component {
 
@@ -8,13 +10,22 @@ export default class AddWidget extends React.Component {
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.addWidget = this.addWidget.bind(this);
+    this.selectSize = this.selectSize.bind(this);
     this.closePane = this.closePane.bind(this);
-    this.state = {title: "", description: "", errors: null};
+    this.state = {title: "", description: "", errors: null, size: 1};
   }
 
   addWidget() {
     if(!this.state.errors) {
-      this.setState({title: "", description: "", errors: null});
+      let data = _.sample(widgetData);
+      let widget = {
+        title: this.state.title,
+        description: this.state.description,
+        size: this.state.size,
+        data: data
+      };
+      this.props.addWidget(widget);
+      this.setState({title: "", description: "", errors: null, size: 1});
       this.closePane();
     }
   }
@@ -23,13 +34,18 @@ export default class AddWidget extends React.Component {
       this.props.changePaneState(false);
   }
 
+  selectSize(size) {
+    return () => {
+      this.setState({size: size});
+    }
+  }
+
   update(updatedArea) {
     return (e) => {
       let charLimit = updatedArea === "title" ? 25 : 50;
       if(this.verifyLength(e.target.value, charLimit)) {
         this.setState({[updatedArea]: e.target.value, errors: null});
-      }
-      else {
+      } else {
         this.setState({errors: `Please use less than ${charLimit} character for your ${updatedArea}.`});
       }
     }
@@ -60,7 +76,7 @@ export default class AddWidget extends React.Component {
           <h3>Choose Widget Type</h3>
           <ul className="widget-list">
             <li>
-              <WidgetOption type="table" />
+              <WidgetOption type="table" selectSize={this.selectSize}/>
             </li>
             <li>
               <WidgetOption type="donut" />

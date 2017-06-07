@@ -1,7 +1,12 @@
 import React from 'react';
 import Row from './Row';
 
-export default ({size, data, name, description}) => {
+export default ({widget}) => {
+  debugger;
+  let data = widget.data;
+  let size = widget.size;
+  let title = widget.title;
+  let description = widget.description;
   const renderData = (data) => {
     return (
         data.map((rowObject, i) => {
@@ -14,9 +19,9 @@ export default ({size, data, name, description}) => {
 
   const renderTitles = (data) => {
     return (
-        Object.keys(data[0]).map((title, i) => {
+        Object.keys(data[0]).map((columnTitle, i) => {
           return (
-            <li key={i}>{title}</li>
+            <li key={i}>{columnTitle}</li>
           )
         })
     );
@@ -24,7 +29,7 @@ export default ({size, data, name, description}) => {
 
   return (
     <div className={`widget-${size}`}>
-      <h3>{name}</h3>
+      <h3>{title}</h3>
       <p>{description}</p>
       <ul>
         <ul>
