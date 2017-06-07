@@ -19,13 +19,13 @@ export default class Root extends React.Component {
         name:"Foods",
         size: 1,
         description: "yum",
-        data: sample(widgetData)
+        data: widgetData[0]
       },
       {
         name:"Flavors",
         size: 1,
         description: "meh",
-        data: sample(widgetData)
+        data: widgetData[1]
       }
     ];
   }
