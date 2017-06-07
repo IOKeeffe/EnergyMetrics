@@ -2,7 +2,6 @@ import React from 'react';
 import Row from './Row';
 
 export default ({widget}) => {
-  debugger;
   let data = widget.data;
   let size = widget.size;
   let title = widget.title;
