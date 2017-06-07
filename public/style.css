@@ -53,6 +53,16 @@ ul, li, body {
         padding-left: 8px;
         padding-right: 71px; }
 
+.add-widget-panel.active {
+  display: absolute;
+  top: 0;
+  left: 0; }
+
+.add-widget-panel.inactive {
+  display: none;
+  top: -90vh;
+  left: 0; }
+
 @font-face {
   font-family: "HelveticaNeue";
   src: url("./fonts/HelveticaNeueDeskInterface-Regular.ttf") format("truetype"); }
