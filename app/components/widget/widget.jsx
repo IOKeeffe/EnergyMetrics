@@ -1,8 +1,7 @@
 import React from 'react';
 import Row from './Row';
 
-export default ({name, size, description, data}) => {
-    
+export default ({size, data, name, description}) => {
   const renderData = (data) => {
     return (
         data.map((rowObject, i) => {
@@ -12,7 +11,7 @@ export default ({name, size, description, data}) => {
         })
     );
   }
-  
+
   const renderTitles = (data) => {
     return (
         Object.keys(data[0]).map((title, i) => {

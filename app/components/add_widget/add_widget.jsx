@@ -12,16 +12,14 @@ export default class AddWidget extends React.Component {
     this.state = {title: "", description: "", errors: null};
   }
 
-  componentWillReceiveProps() {
-  }
-
   addWidget() {
-    console.log("ADDINGWIDGET");
-    console.log(this.state);
+    if(!this.state.errors) {
+      this.setState({title: "", description: "", errors: null});
+      this.closePane();
+    }
   }
 
   closePane() {
-      console.log("CLOSING PANE");
       this.props.changePaneState(false);
   }
 
