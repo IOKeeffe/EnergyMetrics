@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header/header';
 import TitleBar from './title_bar/title_bar';
 import Widget from './widget/widget';
+import AddWidget from './add_widget/add_widget';
 
 export default (props) => {
   let title = "Dashboard";
@@ -16,6 +17,7 @@ export default (props) => {
       <Header />
       <TitleBar title={title} />
       <Widget name={name} size={size} description={description} data={data} />
+      <AddWidget />
     </div>
   );
 }

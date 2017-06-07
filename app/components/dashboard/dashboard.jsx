@@ -10,7 +10,7 @@ export default class Dasboard extends React.Component {
     let returnArray = [];
     props.widgets.map((widget, i) => {
       return(
-        <Widget data={props.widgets[i].data} />
+        <Widget data={.data} />
       );
     });
     return returnArray;
