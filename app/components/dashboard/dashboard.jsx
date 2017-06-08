@@ -52,7 +52,7 @@ export default class Dasboard extends React.Component {
                   <img src="./public/images/dropdown-arrow.svg"></img>
                 </div>
               </div>
-              <div className="dashboard-header-add-widget-button">
+              <div className="dashboard-header-add-widget-button" onClick={this.props.changePaneState}>
                 <img src="./public/images/icon-add.svg"></img>
                 <button>Add a New Widget</button>
               </div>
@@ -60,7 +60,7 @@ export default class Dasboard extends React.Component {
           </div>
           <div className="content-area">
             {this.renderWidgets()}
-            <div className="add-widget-button" onClick={this.props.changePaneState}>
+            <div className="add-new-widget-button" onClick={this.props.changePaneState}>
               <img src="./public/images/icon-add-large.svg"></img>
               <h4>Add a New Widget</h4>
             </div>

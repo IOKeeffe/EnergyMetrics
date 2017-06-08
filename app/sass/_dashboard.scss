@@ -1,4 +1,9 @@
 .content-area {
+  align-items: flex-start;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-flow: row wrap;
+
   padding-top: 45px;
 }
 
@@ -13,10 +18,30 @@
 }
 
 div[class^='widget-size'] {
-    border: 1px solid #ccc;
-    box-shadow: 0 1px 2px 0
-      rgba(0, 0, 0, 0.45);
     color: #F00;
+    padding: 0 30px 30px 0;
+
+    .widget-content {
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px 0
+        rgba(0, 0, 0, 0.45);
+
+      .rows {
+        height: 300px;
+        overflow-y: auto;
+      }
+    }
+
+    .widget-header {
+      border-bottom: 1px solid #ccc;
+      padding: 20px 20px 12px 20px;
+
+      p {
+        font-size: 12px;
+        color: #888;
+      }
+    }
 
     .widget-title-section {
       align-items: flex-end;
@@ -26,5 +51,56 @@ div[class^='widget-size'] {
       h3 {
         font-size: 20px;
       }
+      img {
+        padding-left: 15px;
+      }
     }
+
+    .title-row, .data-row {
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      li {
+        border-right: 1px solid #ccc;
+        text-align: start;
+
+        width: 33.33%;
+      }
+      li:last-child {
+        border-right: 0;
+      }
+    }
+    .title-row li{
+      font-size: 12px;
+      font-weight: bold;
+      padding: 16px 0 16px 20px;
+    }
+
+    .data-row li{
+      font-size: 12px;
+      padding: 16px 0 16px 20px;
+    }
+    li:last-child {
+      border-bottom: 0;
+    }
+}
+
+.add-new-widget-button {
+  align-items: center;
+  background-color: white;
+  border: solid 1px #ccc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 168px;
+  width: 168px;
+
+  img {
+    padding: 0 0 20px;
+  }
 }

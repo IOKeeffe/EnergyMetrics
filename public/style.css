@@ -224,6 +224,7 @@ ul, li, body h1, h2, h3, h4, h5, body, div {
       align-items: center;
       border: 1px solid #bbb;
       border-radius: 3px;
+      cursor: pointer;
       display: flex;
       justify-content: space-between; }
       .dashboard-header .dashboard-controls .dashboard-header-add-widget-button img {
@@ -232,10 +233,15 @@ ul, li, body h1, h2, h3, h4, h5, body, div {
       .dashboard-header .dashboard-controls .dashboard-header-add-widget-button button {
         background-color: white;
         border: 0;
+        cursor: pointer;
         font-size: 14px;
         font-weight: bold; }
 
 .content-area {
+  align-items: flex-start;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-flow: row wrap;
   padding-top: 45px; }
 
 .widget-size-1 {
@@ -248,15 +254,64 @@ ul, li, body h1, h2, h3, h4, h5, body, div {
   width: 1170px; }
 
 div[class^='widget-size'] {
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
-  color: #F00; }
+  color: #F00;
+  padding: 0 30px 30px 0; }
+  div[class^='widget-size'] .widget-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45); }
+    div[class^='widget-size'] .widget-content .rows {
+      height: 300px;
+      overflow-y: auto; }
+  div[class^='widget-size'] .widget-header {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 20px 12px 20px; }
+    div[class^='widget-size'] .widget-header p {
+      font-size: 12px;
+      color: #888; }
   div[class^='widget-size'] .widget-title-section {
     align-items: flex-end;
     display: flex;
     justify-content: space-between; }
     div[class^='widget-size'] .widget-title-section h3 {
       font-size: 20px; }
+    div[class^='widget-size'] .widget-title-section img {
+      padding-left: 15px; }
+  div[class^='widget-size'] .title-row, div[class^='widget-size'] .data-row {
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between; }
+    div[class^='widget-size'] .title-row li, div[class^='widget-size'] .data-row li {
+      border-right: 1px solid #ccc;
+      text-align: start;
+      width: 33.33%; }
+    div[class^='widget-size'] .title-row li:last-child, div[class^='widget-size'] .data-row li:last-child {
+      border-right: 0; }
+  div[class^='widget-size'] .title-row li {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 16px 0 16px 20px; }
+  div[class^='widget-size'] .data-row li {
+    font-size: 12px;
+    padding: 16px 0 16px 20px; }
+  div[class^='widget-size'] li:last-child {
+    border-bottom: 0; }
+
+.add-new-widget-button {
+  align-items: center;
+  background-color: white;
+  border: solid 1px #ccc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 168px;
+  width: 168px; }
+  .add-new-widget-button img {
+    padding: 0 0 20px; }
 
 @font-face {
   font-family: "HelveticaNeue";

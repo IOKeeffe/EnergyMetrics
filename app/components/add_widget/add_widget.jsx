@@ -49,9 +49,7 @@ export default class AddWidget extends React.Component {
   }
 
   selectSize(size) {
-    return (e) => {
       this.setState({size: size});
-    }
   }
 
   update(updatedArea) {

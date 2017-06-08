@@ -29,23 +29,25 @@ export default ({widget}) => {
 
   return (
     <div className={`widget-size-${size}`}>
-      <div className="widget-header">
-        <div className="widget-title-section">
-          <h3>{name}</h3>
-          <div className="icon-section">
-            <img src="./public/images/icon-settings-copy.svg"></img>
-            <img src="./public/images/icon-move.svg"></img>
+      <div className="widget-content">
+        <div className="widget-header">
+          <div className="widget-title-section">
+            <h3>{name}</h3>
+            <div className="icon-section">
+              <img src="./public/images/icon-settings-copy.svg"></img>
+              <img src="./public/images/icon-move.svg"></img>
+            </div>
           </div>
+          <p className="widget-description">{description}</p>
         </div>
-        <p className="widget-description">{description}</p>
-      </div>
 
-      <ul className="rows">
-        <ul className="title-row">
-          {renderTitles(data)}
+        <ul className="rows">
+          <ul className="title-row">
+            {renderTitles(data)}
+          </ul>
+          {renderData(data)}
         </ul>
-        {renderData(data)}
-      </ul>
+      </div>
     </div>
   );
 };
