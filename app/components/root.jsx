@@ -14,7 +14,7 @@ export default class Root extends React.Component {
     this.changePaneState = this.changePaneState.bind(this);
     this.addWidget = this.addWidget.bind(this);
     this.state = ({
-      addPaneActive: true,
+      addPaneActive: false,
       widgets: [
         {
           name:"Foods",
@@ -48,7 +48,7 @@ export default class Root extends React.Component {
         <AddWidget active={this.state.addPaneActive} changePaneState={this.changePaneState} addWidget={this.addWidget} />
         <Header />
         <TitleBar title={this.title} />
-        <Dashboard widgets={this.state.widgets} />
+        <Dashboard widgets={this.state.widgets} changePaneState={this.changePaneState}/>
       </div>
     );
   }

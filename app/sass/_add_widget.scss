@@ -1,5 +1,6 @@
 .add-widget-panel {
   background-color: white;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
   left: 0;
   position: absolute;
   transition: .75s;
@@ -23,6 +24,10 @@
     color: white;
     font-size: 20px;
     letter-spacing: -.1px;
+  }
+
+  img {
+    cursor: pointer;
   }
 }
 
