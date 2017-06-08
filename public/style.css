@@ -1,4 +1,5 @@
-ul, li, body h1, h2, h3, h4, div {
+ul, li, body h1, h2, h3, h4, h5, body, div {
+  color: #333;
   font-family: HelveticaNeue;
   font-weight: normal;
   letter-spacing: -0.1px;
@@ -173,6 +174,66 @@ ul, li, body h1, h2, h3, h4, div {
     cursor: pointer; }
     .widget-confirmation .cancel-widget-button:hover {
       text-decoration: underline; }
+
+.dashboard-bar {
+  background-color: #333;
+  font-weight: normal; }
+  .dashboard-bar h1 {
+    color: white;
+    font-size: 20px;
+    padding: 6px 63px 9px; }
+
+.dashboard-header-section {
+  padding: 18px 63px 0 63px; }
+
+.dashboard-header {
+  align-items: flex-end;
+  border-bottom: 4px solid #333;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px; }
+  .dashboard-header .header-title-section {
+    display: flex; }
+    .dashboard-header .header-title-section h1 {
+      font-size: 24px;
+      padding-right: 10px; }
+  .dashboard-header .dashboard-controls {
+    align-items: flex-end;
+    display: flex; }
+    .dashboard-header .dashboard-controls .dashboard-switcher {
+      padding: 0 22px 0; }
+      .dashboard-header .dashboard-controls .dashboard-switcher h5 {
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0 0 7px; }
+      .dashboard-header .dashboard-controls .dashboard-switcher .selector {
+        align-items: center;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        width: 200px; }
+        .dashboard-header .dashboard-controls .dashboard-switcher .selector div {
+          color: #555;
+          font-size: 14px;
+          padding-left: 9px; }
+        .dashboard-header .dashboard-controls .dashboard-switcher .selector img {
+          padding-right: 9px; }
+    .dashboard-header .dashboard-controls .dashboard-header-add-widget-button {
+      align-items: center;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between; }
+      .dashboard-header .dashboard-controls .dashboard-header-add-widget-button img {
+        padding: 7px;
+        border-right: 1px solid #bbb; }
+      .dashboard-header .dashboard-controls .dashboard-header-add-widget-button button {
+        background-color: white;
+        border: 0;
+        font-size: 14px;
+        font-weight: bold; }
 
 @font-face {
   font-family: "HelveticaNeue";

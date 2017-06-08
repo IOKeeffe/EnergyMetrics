@@ -6,6 +6,7 @@ export default ({widget}) => {
   let size = widget.size;
   let title = widget.title;
   let description = widget.description;
+
   const renderData = (data) => {
     return (
         data.map((rowObject, i) => {
@@ -30,8 +31,8 @@ export default ({widget}) => {
     <div className={`widget-${size}`}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <ul>
-        <ul>
+      <ul className="rows">
+        <ul className="title-row">
           {renderTitles(data)}
         </ul>
         {renderData(data)}

@@ -47,7 +47,6 @@ export default class Root extends React.Component {
       <div className="content-holder">
         <AddWidget active={this.state.addPaneActive} changePaneState={this.changePaneState} addWidget={this.addWidget} />
         <Header />
-        <TitleBar title={this.title} />
         <Dashboard widgets={this.state.widgets} changePaneState={this.changePaneState}/>
       </div>
     );

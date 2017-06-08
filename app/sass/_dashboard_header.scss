@@ -1,0 +1,82 @@
+.dashboard-bar {
+  background-color: #333;
+  font-weight: normal;
+
+  h1 {
+    color: white;
+    font-size: 20px;
+    padding: 6px 63px 9px;
+  }
+}
+
+.dashboard-header-section {
+  padding: 18px 63px 0 63px;
+}
+
+.dashboard-header {
+  align-items: flex-end;
+  border-bottom: 4px solid #333;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px; 
+
+  .header-title-section {
+    display: flex;
+
+    h1 {
+      font-size: 24px;
+      padding-right: 10px;
+    }
+  }
+
+  .dashboard-controls {
+    align-items: flex-end;
+    display: flex;
+
+    .dashboard-switcher {
+      padding: 0 22px 0;
+
+      h5 {
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0 0 7px;
+      }
+      .selector {
+        align-items: center;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        width: 200px;
+        div {
+          color: #555;
+          font-size: 14px;
+          padding-left: 9px;
+        }
+        img {
+          padding-right: 9px;
+        }
+      }
+    }
+    .dashboard-header-add-widget-button {
+      align-items: center;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        padding: 7px;
+        border-right: 1px solid #bbb;
+      }
+
+      button {
+        background-color: white;
+        border: 0;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({data, isHeader}) => {
-  
+
   const renderRow = (data) => {
     return (
       Object.keys(data).map((title, i) =>{
@@ -10,9 +10,9 @@ export default ({data, isHeader}) => {
         );})
     );
   }
-    
+
   return (
-    <ul>
+    <ul className="data-row">
       {renderRow(data)}
     </ul>
   );
