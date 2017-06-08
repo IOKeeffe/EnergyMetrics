@@ -16,7 +16,8 @@ export default class AddWidget extends React.Component {
   }
 
   addWidget() {
-    if(!this.state.errors) {
+
+    if(!this.state.errors && this.verifyContent()) {
       let data = _.sample(widgetData);
       let widget = {
         title: this.state.title,
@@ -61,6 +62,14 @@ export default class AddWidget extends React.Component {
     }
   }
 
+  verifyContent() {
+    if(this.state.title.length === 0 && this.state.description.length === 0) {
+      this.setState({errors: "Please ensure you have a title and description."});
+      return false;
+    }
+    return true;
+  }
+
   verifyLength(input, charLimit) {
     return input.length < charLimit;
   }
@@ -72,34 +81,36 @@ export default class AddWidget extends React.Component {
           <h1>Add a Widget</h1>
           <img src="./public/images/icon-close.svg" onClick={this.closePane}></img>
         </div>
-        <div className="widget-selector">
-          <h3>Choose Widget Type</h3>
-          <ul className="widget-list">
-            <li>
-              <WidgetOption type="table" selectSize={this.selectSize}/>
-            </li>
-            <li>
-              <WidgetOption type="donut" />
-            </li>
-            <li>
-              <WidgetOption type="bar" />
-            </li>
-            <li>
-              <WidgetOption type="line" />
-            </li>
-          </ul>
-        </div>
-        <div className="widget-options">
-          <h3>Widget Header (Optional)</h3>
-          {this.renderErrors()}
-          <h2>Widget Title (25 characters max)</h2>
-          <input type="text" value={this.state.title}  onChange={this.update('title')} ></input>
-          <h2>Widget Description (50 characters max)</h2>
-          <textarea value={this.state.description} onChange={this.update('description')} />
-        </div>
-        <div className="widget-confirmation">
-          <button onClick={this.addWidget}>Add Widget</button>
-          <button onClick={this.closePane}>Cancel</button>
+        <div className = "add-widget-content">
+          <div className="widget-selector">
+            <h3>Choose Widget Type</h3>
+            <ul className="widget-list">
+              <li>
+                <WidgetOption type="table" selectSize={this.selectSize}/>
+              </li>
+              <li>
+                <WidgetOption type="donut" />
+              </li>
+              <li>
+                <WidgetOption type="bar" />
+              </li>
+              <li>
+                <WidgetOption type="line" />
+              </li>
+            </ul>
+          </div>
+          <div className="widget-options">
+            <h3>Widget Header (Optional)</h3>
+            {this.renderErrors()}
+            <h2>Widget Title (25 characters max)</h2>
+            <input type="text" value={this.state.title}  onChange={this.update('title')} ></input>
+            <h2>Widget Description (50 characters max)</h2>
+            <textarea value={this.state.description} onChange={this.update('description')} />
+          </div>
+          <div className="widget-confirmation">
+            <button onClick={this.addWidget}>Add Widget</button>
+            <button onClick={this.closePane}>Cancel</button>
+          </div>
         </div>
       </div>
     );

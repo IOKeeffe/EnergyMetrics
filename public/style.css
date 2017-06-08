@@ -1,4 +1,4 @@
-ul, li, body {
+ul, li, body h1, h2, h3, div {
   font-family: HelveticaNeue;
   list-style: none;
   margin: 0;
@@ -55,13 +55,26 @@ ul, li, body {
 
 .add-widget-panel.active {
   display: absolute;
+  left: 0;
   top: 0;
-  left: 0; }
+  transition: .5s; }
 
 .add-widget-panel.inactive {
   display: none;
-  top: -90vh;
-  left: 0; }
+  left: 0;
+  transition: .5s;
+  top: -90vh; }
+
+.add-widget-header {
+  align-items: center;
+  background-color: #333333;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 64px; }
+  .add-widget-header h1 {
+    color: white;
+    font-size: 20px;
+    letter-spacing: -.1px; }
 
 @font-face {
   font-family: "HelveticaNeue";
