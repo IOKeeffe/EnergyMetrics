@@ -58,10 +58,12 @@ export default class Dasboard extends React.Component {
               </div>
             </div>
           </div>
-          {this.renderWidgets()}
-          <div className="add-widget-button" onClick={this.props.changePaneState}>
-            <img src="./public/images/icon-add-large.svg"></img>
-            <h4>Add a New Widget</h4>
+          <div className="content-area">
+            {this.renderWidgets()}
+            <div className="add-widget-button" onClick={this.props.changePaneState}>
+              <img src="./public/images/icon-add-large.svg"></img>
+              <h4>Add a New Widget</h4>
+            </div>
           </div>
         </div>
       </div>

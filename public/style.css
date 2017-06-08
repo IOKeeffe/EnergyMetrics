@@ -235,6 +235,29 @@ ul, li, body h1, h2, h3, h4, h5, body, div {
         font-size: 14px;
         font-weight: bold; }
 
+.content-area {
+  padding-top: 45px; }
+
+.widget-size-1 {
+  width: 370px; }
+
+.widget-size-2 {
+  width: 770px; }
+
+.widget-size-3 {
+  width: 1170px; }
+
+div[class^='widget-size'] {
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  color: #F00; }
+  div[class^='widget-size'] .widget-title-section {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between; }
+    div[class^='widget-size'] .widget-title-section h3 {
+      font-size: 20px; }
+
 @font-face {
   font-family: "HelveticaNeue";
   src: url("./fonts/HelveticaNeueDeskInterface-Light.ttf") format("truetype"); }

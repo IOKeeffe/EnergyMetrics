@@ -4,7 +4,7 @@ import Row from './Row';
 export default ({widget}) => {
   let data = widget.data;
   let size = widget.size;
-  let title = widget.title;
+  let name = widget.name;
   let description = widget.description;
 
   const renderData = (data) => {
@@ -28,9 +28,18 @@ export default ({widget}) => {
   }
 
   return (
-    <div className={`widget-${size}`}>
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className={`widget-size-${size}`}>
+      <div className="widget-header">
+        <div className="widget-title-section">
+          <h3>{name}</h3>
+          <div className="icon-section">
+            <img src="./public/images/icon-settings-copy.svg"></img>
+            <img src="./public/images/icon-move.svg"></img>
+          </div>
+        </div>
+        <p className="widget-description">{description}</p>
+      </div>
+
       <ul className="rows">
         <ul className="title-row">
           {renderTitles(data)}
