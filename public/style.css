@@ -134,12 +134,17 @@ ul, li, body h1, h2, h3, div {
     color: white; }
 
 .widget-info {
-  padding: 28px 0 0; }
+  border-bottom: 1px solid #dddddd;
+  padding: 28px 0 31px; }
   .widget-info * {
     padding: 9px 0; }
   .widget-info h3 {
     font-size: 16px;
-    padding-bottom: 9px; }
+    padding: 0 0 9px; }
+  .widget-info h4 {
+    font-size: 12px; }
+  .widget-info input, .widget-info textarea {
+    padding: 0; }
 
 @font-face {
   font-family: "HelveticaNeue";

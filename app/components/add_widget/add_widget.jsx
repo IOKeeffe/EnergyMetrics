@@ -114,9 +114,9 @@ export default class AddWidget extends React.Component {
           <div className="widget-info">
             <h3>Widget Header (Optional)</h3>
             {_this.renderErrors()}
-            <h2>Widget Title (25 characters max)</h2>
+            <h4><b>Widget Title</b> (25 characters max)</h4>
             <input type="text" value={_this.state.title}  onChange={_this.update('title')} ></input>
-            <h2>Widget Description (50 characters max)</h2>
+            <h4><b>Widget Description</b> (50 characters max)</h4>
             <textarea value={_this.state.description} onChange={_this.update('description')} />
           </div>
           <div className="widget-confirmation">
