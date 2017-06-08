@@ -7,16 +7,15 @@ export default class AddWidget extends React.Component {
 
   constructor(props) {
     super(props);
-    this.update = this.update.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
     this.addWidget = this.addWidget.bind(this);
-    this.selectSize = this.selectSize.bind(this);
     this.closePane = this.closePane.bind(this);
-    this.state = {title: "", description: "", errors: null, size: 1};
+    this.selectType = this.selectType.bind(this);
+    this.selectOption = this.selectOption.bind(this);
+    this.selectSize = this.selectSize.bind(this);
+    this.state = {title: "", description: "", errors: null, size: 1, type: "table"};
   }
 
   addWidget() {
-
     if(!this.state.errors && this.verifyContent()) {
       let data = _.sample(widgetData);
       let widget = {
@@ -35,8 +34,22 @@ export default class AddWidget extends React.Component {
       this.props.changePaneState(false);
   }
 
+  selectOption(option) {
+    return(choice) => {
+      return(e) => {
+        this.setState({[option]: choice})
+      }
+    }
+  }
+
+  selectType(type) {
+    return(e) => {
+      this.setState({type: type});
+    }
+  }
+
   selectSize(size) {
-    return () => {
+    return (e) => {
       this.setState({size: size});
     }
   }
@@ -75,41 +88,40 @@ export default class AddWidget extends React.Component {
   }
 
   render() {
+    let _this = this;
     return (
-      <div className={`add-widget-panel ${this.props.active ? 'active' : 'inactive'}`}>
+      <div className={`add-widget-panel ${_this.props.active ? 'active' : 'inactive'}`}>
         <div className="add-widget-header">
           <h1>Add a Widget</h1>
-          <img src="./public/images/icon-close.svg" onClick={this.closePane}></img>
+          <img src="./public/images/icon-close.svg" onClick={_this.closePane}></img>
         </div>
         <div className = "add-widget-content">
-          <div className="widget-selector">
-            <h3>Choose Widget Type</h3>
-            <ul className="widget-list">
-              <li>
-                <WidgetOption type="table" selectSize={this.selectSize}/>
-              </li>
-              <li>
-                <WidgetOption type="donut" />
-              </li>
-              <li>
-                <WidgetOption type="bar" />
-              </li>
-              <li>
-                <WidgetOption type="line" />
-              </li>
-            </ul>
-          </div>
-          <div className="widget-options">
+          <h3>Choose Widget Type</h3>
+          <ul className="widget-list">
+            <li onClick={_this.selectType('table')} >
+              <WidgetOption selected={_this.state.type === "table"} type="table" selectSize={_this.selectSize} />
+            </li>
+            <li onClick={_this.selectType('donut')}>
+              <WidgetOption selected={_this.state.type === "donut"} type="donut" selectSize={_this.selectSize} />
+            </li>
+            <li onClick={_this.selectType('bar')}>
+              <WidgetOption selected={_this.state.type === "bar"} type="bar" selectSize={_this.selectSize} />
+            </li>
+            <li onClick={_this.selectType('line')}>
+              <WidgetOption selected={_this.state.type === "line"} type="line" selectSize={_this.selectSize} />
+            </li>
+          </ul>
+          <div className="widget-info">
             <h3>Widget Header (Optional)</h3>
-            {this.renderErrors()}
+            {_this.renderErrors()}
             <h2>Widget Title (25 characters max)</h2>
-            <input type="text" value={this.state.title}  onChange={this.update('title')} ></input>
+            <input type="text" value={_this.state.title}  onChange={_this.update('title')} ></input>
             <h2>Widget Description (50 characters max)</h2>
-            <textarea value={this.state.description} onChange={this.update('description')} />
+            <textarea value={_this.state.description} onChange={_this.update('description')} />
           </div>
           <div className="widget-confirmation">
-            <button onClick={this.addWidget}>Add Widget</button>
-            <button onClick={this.closePane}>Cancel</button>
+            <button onClick={_this.addWidget}>Add Widget</button>
+            <button onClick={_this.closePane}>Cancel</button>
           </div>
         </div>
       </div>

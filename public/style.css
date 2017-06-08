@@ -1,5 +1,6 @@
 ul, li, body h1, h2, h3, div {
   font-family: HelveticaNeue;
+  letter-spacing: -0.1px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -53,16 +54,17 @@ ul, li, body h1, h2, h3, div {
         padding-left: 8px;
         padding-right: 71px; }
 
-.add-widget-panel.active {
-  display: absolute;
+.add-widget-panel {
+  background-color: white;
   left: 0;
-  top: 0;
-  transition: .5s; }
+  position: absolute;
+  transition: .75s;
+  width: 100%; }
+
+.add-widget-panel.active {
+  top: 0; }
 
 .add-widget-panel.inactive {
-  display: none;
-  left: 0;
-  transition: .5s;
   top: -90vh; }
 
 .add-widget-header {
@@ -76,8 +78,71 @@ ul, li, body h1, h2, h3, div {
     font-size: 20px;
     letter-spacing: -.1px; }
 
+.add-widget-content {
+  padding: 30px 64px; }
+  .add-widget-content h3 {
+    color: #333333;
+    font-size: 16px;
+    padding-bottom: 21px; }
+  .add-widget-content .widget-list {
+    align-items: flex-start;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px; }
+
+.widget-option {
+  align-items: center;
+  background-color: #f7f7f7;
+  border: solid 1px #dddddd;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  transition: .2s;
+  width: 268px; }
+  .widget-option .widget-option-header {
+    border-bottom: solid 1px #dddddd;
+    font-size: 14px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%; }
+  .widget-option .widget-option-size-list {
+    align-items: center;
+    border-top: solid 1px #dddddd;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: space-around;
+    width: 100%; }
+    .widget-option .widget-option-size-list li {
+      border-right: solid 1px #dddddd;
+      color: #00a4c7;
+      flex: 1;
+      text-align: center;
+      transition: .2s; }
+      .widget-option .widget-option-size-list li div {
+        padding: 12px 0; }
+    .widget-option .widget-option-size-list li:last-child {
+      border-right: 0; }
+
+.widget-option.selected {
+  border: solid 1px #00a4c7; }
+  .widget-option.selected li.selected {
+    background-color: #00a4c7;
+    color: white; }
+
+.widget-info {
+  padding: 28px 0 0; }
+  .widget-info * {
+    padding: 9px 0; }
+  .widget-info h3 {
+    font-size: 16px;
+    padding-bottom: 9px; }
+
 @font-face {
   font-family: "HelveticaNeue";
-  src: url("./fonts/HelveticaNeueDeskInterface-Regular.ttf") format("truetype"); }
+  src: url("./fonts/HelveticaNeueDeskInterface-Light.ttf") format("truetype"); }
 
 /*# sourceMappingURL=style.css.map */
