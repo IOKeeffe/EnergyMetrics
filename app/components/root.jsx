@@ -17,15 +17,15 @@ export default class Root extends React.Component {
       addPaneActive: false,
       widgets: [
         {
-          name:"Foods",
+          name:"Exports",
           size: 1,
-          description: "yum",
+          description: "Exports by country and year",
           data: widgetData[0]
         },
         {
-          name:"Flavors",
+          name:"Favorite Foods",
           size: 1,
-          description: "meh",
+          description: "Most consumed food by country",
           data: widgetData[1]
         }
       ]

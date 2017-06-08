@@ -25,6 +25,16 @@ const widgetData =  [
       "Export": "Sushi",
       "Amount Per Year": "4 Billion Tons"
     },
+    {
+      "Country": "Canada",
+      "Export": "Steak",
+      "Amount Per Year": "29 Billion Tons"
+    },
+    {
+      "Country": "Jamaica",
+      "Export": "Oxtail Stew",
+      "Amount Per Year": "6 Billion Tons"
+    },
   ],
   [
     {
@@ -51,6 +61,16 @@ const widgetData =  [
       "Country": "Japan",
       "Favorite Food": "Curry",
       "Amount Per Year": "4 Billion Tons"
+    },
+    {
+      "Country": "Canada",
+      "Export": "Poutine",
+      "Amount Per Year": "11 Billion Tons"
+    },
+    {
+      "Country": "Jamaica",
+      "Export": "Meat Patty",
+      "Amount Per Year": "12 Billion Tons"
     },
   ],
   [
