@@ -118,3 +118,33 @@
     padding: 0;
   }
 }
+.widget-confirmation {
+  background-color: white;
+  font-size: 14px;
+  padding: 37px 0 69px;
+
+  .add-widget-button {
+    background-color: white;
+    border: solid 1px #bbb;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 30px;
+    padding: 6px 18px;
+    text-align: center;
+    &:hover {
+      background-color: $light-blue;
+      color: white;
+    }
+  }
+
+  .cancel-widget-button {
+    background-color: white;
+    border: 0;
+    color: #777;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

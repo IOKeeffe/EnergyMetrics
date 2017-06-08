@@ -4,5 +4,10 @@
 @import 'add_widget';
 @font-face{
     font-family: "HelveticaNeue";
-    src: url('./fonts/HelveticaNeueDeskInterface-Light.ttf') format('truetype'),
+    src: url('./fonts/HelveticaNeueDeskInterface-Light.ttf') format('truetype');
+}
+@font-face{
+    font-family: "HelveticaNeue";
+    src: url('./fonts/HelveticaNeueDeskInterface-Bold.ttf') format('truetype');
+    font-weight: bold;
 }

@@ -120,8 +120,8 @@ export default class AddWidget extends React.Component {
             <textarea value={_this.state.description} onChange={_this.update('description')} />
           </div>
           <div className="widget-confirmation">
-            <button onClick={_this.addWidget}>Add Widget</button>
-            <button onClick={_this.closePane}>Cancel</button>
+            <button className="add-widget-button" onClick={_this.addWidget}>Add Widget</button>
+            <button className="cancel-widget-button" onClick={_this.closePane}>Cancel</button>
           </div>
         </div>
       </div>
