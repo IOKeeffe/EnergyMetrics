@@ -21,11 +21,17 @@ export default class Dasboard extends React.Component {
     );
   }
 
+  widgetClick(widget) {
+    return () => {
+
+    }
+  }
+
   renderWidgets() {
     return (
       this.props.widgets.map((widget, i) => {
         return (
-          <Widget key={i} widget={widget} />
+          <Widget key={i} widget={widget} onClick={this.widgetClick(widget)}/>
         );
       })
     );
